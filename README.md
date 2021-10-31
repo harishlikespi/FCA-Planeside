@@ -13,3 +13,5 @@ Install entire repository as zip folder, extract
 Navigate to directory in command prompt, run `npm install`
 
 When finished, run `npm start` and voila
+
+### note: not completely updated yet
