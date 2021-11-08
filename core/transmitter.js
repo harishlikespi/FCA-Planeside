@@ -1,24 +1,10 @@
-/*
-* Streamlined version of arduino.js from Skreen
-* Written by Aaron Becker
-*
-* Dedicated to Marc Perkel
-*
-*/
+
 
 const serialPort = require('serialport'); //require serialport driver
 const deviceCommandQueue = require('./deviceCommandQueue.js');
 
 const debugMode = false;
 
-
-/*
-
-
-DEFAULT COMMAND HANDLER (for when queue=0)
-
-
-*/
 const settings = {
 	commandTimeout: 8000,
 	baudRate: 9600,
