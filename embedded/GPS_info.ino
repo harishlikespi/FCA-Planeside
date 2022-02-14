@@ -31,52 +31,55 @@ void loop()
     lastTime = millis(); //Update the timer
     
     long latitude = myGNSS.getLatitude();
-    Serial.print(F("Lat: "));
+    Serial.print(F("{latDeg: "));
     Serial.print(latitude/1000000);
 
     long longitude = myGNSS.getLongitude();
-    Serial.print(F(" Long: "));
+    Serial.print(F(", lonDeg: "));
     Serial.print(longitude/1000000);
+    Serial.println(F("}"));
 
     long speed = myGNSS.getGroundSpeed();
-    Serial.print(F(" Speed: "));
+    Serial.print(F("{Speed: "));
     Serial.print(speed);
-    Serial.print(F(" (mm/s)"));
+    Serial.println(F(" (mm/s)}"));
 
     long heading = myGNSS.getHeading();
-    Serial.print(F(" Heading: "));
+    Serial.print(F("{Heading: "));
     Serial.print(heading);
-    Serial.print(F(" (degrees * 10^-5)"));
+    Serial.println(F(" (degrees * 10^-5)}"));
 
     long altitude = myGNSS.getAltitude();
-    Serial.print(F(" Alt: "));
+    Serial.print(F("{Alt: "));
     Serial.print(altitude);
-    Serial.print(F(" (mm)"));
+    Serial.println(F(" (mm)}"));
 
-    Serial.println();
+    Serial.print(F("{Date: "));
     Serial.print(myGNSS.getYear());
     Serial.print("-");
     Serial.print(myGNSS.getMonth());
     Serial.print("-");
     Serial.print(myGNSS.getDay());
-    Serial.print(" ");
+    Serial.println(F("}"));
+    Serial.print(F("{Time: "));
     Serial.print(myGNSS.getHour());
     Serial.print(":");
     Serial.print(myGNSS.getMinute());
     Serial.print(":");
     Serial.print(myGNSS.getSecond());
+    Serial.println(F("}"));
 
-    Serial.print("  Time is ");
+    Serial.print(F("Time is "));
     if (myGNSS.getTimeValid() == false)
     {
-      Serial.print("not ");
+      Serial.print(F("not "));
     }
-    Serial.print("valid  Date is ");
+    Serial.print(F("valid. Date is "));
     if (myGNSS.getDateValid() == false)
     {
-      Serial.print("not ");
+      Serial.print(F("not "));
     }
-    Serial.print("valid");
+    Serial.print(F("valid."));
 
     Serial.println();
   }
